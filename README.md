@@ -195,4 +195,4 @@ Les carpetes que comencen per `_` són especials per a Jekyll i no es copien tal
 
 ## 10. URL de la web publicada
 
-[POSAR URL DE GITHUB PAGES]
+https://adriaautonell-escorialvic.github.io
