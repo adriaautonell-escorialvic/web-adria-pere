@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<!--
+  Layout propi per a les pàgines de documentació.
+  Hereta de "default" (del tema minima) i hi afegeix:
+   - un menú lateral amb les pàgines de la secció
+   - una "ruta" (Inici > Secció > Pàgina)
+-->
+<div class="nc-doc">
+  {% include section-nav.html %}
+
+  <article class="nc-doc-content">
+    <p class="nc-breadcrumb">
+      <a href="{{ '/' | relative_url }}">Inici</a> &rsaquo;
+      <a href="{{ '/' | append: page.section | append: '/' | relative_url }}">{{ page.section | capitalize }}</a>
+      {%- if page.order != 0 %} &rsaquo; {{ page.title }}{% endif %}
+    </p>
+
+    <h1>{{ page.title }}</h1>
+    {%- if page.author %}
+      <p class="nc-meta">Escrit per {{ page.author }}</p>
+    {%- endif %}
+
+    {{ content }}
+  </article>
+</div>

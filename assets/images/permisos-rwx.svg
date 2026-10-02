@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 260" width="640" height="260" font-family="Arial, Helvetica, sans-serif">
+  <!-- Esquema dels permisos que mostra la comanda ls amb l'opció l -->
+  <rect width="640" height="260" fill="#ffffff"/>
+  <text x="320" y="32" font-size="20" text-anchor="middle" fill="#1f4e79" font-weight="bold">Com es llegeixen els permisos de ls -l</text>
+
+  <!-- Caràcters -->
+  <g font-family="Courier New, monospace" font-size="34" font-weight="bold" text-anchor="middle">
+    <rect x="60" y="60" width="44" height="54" fill="#eeeeee" stroke="#999"/>
+    <text x="82" y="99" fill="#555">-</text>
+
+    <rect x="114" y="60" width="150" height="54" fill="#dbe8f5" stroke="#1f4e79"/>
+    <text x="139" y="99" fill="#1f4e79">r</text>
+    <text x="189" y="99" fill="#1f4e79">w</text>
+    <text x="239" y="99" fill="#1f4e79">x</text>
+
+    <rect x="274" y="60" width="150" height="54" fill="#dff1e6" stroke="#2e8b57"/>
+    <text x="299" y="99" fill="#2e8b57">r</text>
+    <text x="349" y="99" fill="#2e8b57">-</text>
+    <text x="399" y="99" fill="#2e8b57">x</text>
+
+    <rect x="434" y="60" width="150" height="54" fill="#fdebd3" stroke="#e69500"/>
+    <text x="459" y="99" fill="#b36b00">r</text>
+    <text x="509" y="99" fill="#b36b00">-</text>
+    <text x="559" y="99" fill="#b36b00">-</text>
+  </g>
+
+  <!-- Etiquetes -->
+  <g font-size="15" text-anchor="middle">
+    <text x="82" y="140" fill="#555">tipus</text>
+    <text x="82" y="158" fill="#555" font-size="12">(- fitxer, d carpeta)</text>
+    <text x="189" y="140" fill="#1f4e79" font-weight="bold">Propietari (u)</text>
+    <text x="349" y="140" fill="#2e8b57" font-weight="bold">Grup (g)</text>
+    <text x="509" y="140" fill="#b36b00" font-weight="bold">Altres (o)</text>
+  </g>
+
+  <!-- Valors numèrics -->
+  <g font-size="16" text-anchor="middle">
+    <text x="189" y="175" fill="#1f4e79">4+2+1 = 7</text>
+    <text x="349" y="175" fill="#2e8b57">4+0+1 = 5</text>
+    <text x="509" y="175" fill="#b36b00">4+0+0 = 4</text>
+  </g>
+
+  <rect x="140" y="200" width="360" height="40" rx="6" fill="#1e252e"/>
+  <text x="320" y="226" font-family="Courier New, monospace" font-size="18" fill="#b5e08c" text-anchor="middle">chmod 754 script.sh</text>
+  <text x="320" y="255" font-size="12" text-anchor="middle" fill="#5a6270">r = 4 (llegir) · w = 2 (escriure) · x = 1 (executar)</text>
+</svg>

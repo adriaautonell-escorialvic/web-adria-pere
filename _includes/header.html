@@ -1,0 +1,28 @@
+<!-- Capçalera pròpia: logo + menú que es llegeix de _data/navigation.yml -->
+<header class="site-header nc-header">
+  <div class="wrapper nc-header-inner">
+    <a class="nc-brand" href="{{ '/' | relative_url }}">
+      <img src="{{ '/assets/images/logo.svg' | relative_url }}" alt="Logo de NetCore Systems" width="36" height="36">
+      <span>{{ site.title }}</span>
+    </a>
+
+    <!-- Menú per a mòbil: checkbox + label, sense JavaScript -->
+    <input type="checkbox" id="nc-menu-toggle" class="nc-menu-toggle">
+    <label for="nc-menu-toggle" class="nc-menu-button" aria-label="Obrir el menú">&#9776;</label>
+
+    <nav class="nc-nav">
+      {%- for item in site.data.navigation -%}
+        {%- assign item_url = item.url | relative_url -%}
+        {%- comment -%} Marquem l'opció del menú de la secció on som {%- endcomment -%}
+        {%- assign actiu = false -%}
+        {%- if item.url == '/' -%}
+          {%- if page.url == '/' -%}{%- assign actiu = true -%}{%- endif -%}
+        {%- else -%}
+          {%- assign inici_url = page.url | slice: 0, item.url.size -%}
+          {%- if inici_url == item.url -%}{%- assign actiu = true -%}{%- endif -%}
+        {%- endif -%}
+        <a href="{{ item_url }}" {% if actiu %}class="actiu"{% endif %}>{{ item.title }}</a>
+      {%- endfor -%}
+    </nav>
+  </div>
+</header>

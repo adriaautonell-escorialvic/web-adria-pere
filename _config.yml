@@ -1,0 +1,81 @@
+# ============================================================
+#  Configuració principal de Jekyll - NetCore Systems
+#  Si canvies aquest fitxer has de reiniciar "jekyll serve"
+#  (és l'únic fitxer que no es recarrega sol).
+# ============================================================
+
+# --- Dades de la web ---
+title: NetCore Systems
+description: >-
+  Portal de documentació tècnica del departament de sistemes de NetCore Systems.
+  Guies de Linux, xarxes i serveis per als administradors de sistemes.
+author: Adrià Autonell i Pere
+lang: ca
+timezone: Europe/Madrid
+
+# --- URL de la web ---
+# url: domini on es publica la web, sense barra final.
+#      [OMPLIR] -> "https://USUARI-DE-GITHUB.github.io"
+# baseurl: subcarpeta on queda la web (el nom del repositori).
+#      [OMPLIR] -> "/NOM-DEL-REPOSITORI"
+# En local es deixa buit i la web va a http://localhost:4000/
+# Quan es desplega amb GitHub Actions, el workflow ja passa el baseurl
+# correcte amb l'opció --baseurl, així que no cal tocar-lo aquí.
+url: ""
+baseurl: ""
+
+# --- Tema ---
+# Fem servir minima (el tema per defecte de Jekyll) i en sobreescrivim
+# algunes parts des de _layouts, _includes i assets/css.
+theme: minima
+
+minima:
+  date_format: "%d/%m/%Y"
+
+# --- Plugins ---
+plugins:
+  - jekyll-feed      # genera /feed.xml (RSS dels articles)
+  - jekyll-seo-tag   # etiquetes <meta> per a SEO
+  - jekyll-sitemap   # genera /sitemap.xml
+
+# --- Contingut ---
+# Jekyll ignora les carpetes que comencen per "_" si no són especials.
+# Amb "include" li diem que processi també _pages.
+include:
+  - _pages
+
+permalink: /blog/:year/:month/:day/:title/
+
+# El resum de cada article (el que surt a la llista del blog)
+# és el text que hi ha abans d'aquesta marca
+excerpt_separator: "<!--more-->"
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  - scope:
+      path: "_pages"
+    values:
+      layout: page
+
+# --- Markdown ---
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# Amaga els avisos de Sass que venen del tema minima
+sass:
+  quiet_deps: true
+
+# --- Fitxers que no han d'anar a la web generada ---
+exclude:
+  - README.md
+  - MEMORIA.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - .github/

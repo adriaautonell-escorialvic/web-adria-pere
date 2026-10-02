@@ -1,0 +1,16 @@
+# Menú principal de la web.
+# Cada entrada té el text que es veu i l'enllaç (sense el baseurl).
+- title: Inici
+  url: /
+- title: Linux
+  url: /linux/
+- title: Xarxes
+  url: /xarxes/
+- title: Serveis
+  url: /serveis/
+- title: Blog
+  url: /blog/
+- title: Comparativa
+  url: /comparativa/
+- title: Qui som
+  url: /qui-som/

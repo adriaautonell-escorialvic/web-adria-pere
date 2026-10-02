@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 290" width="680" height="290" font-family="Arial, Helvetica, sans-serif">
+  <!-- Petició i resposta HTTP entre navegador i servidor web -->
+  <defs>
+    <marker id="fh" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5a6270"/>
+    </marker>
+  </defs>
+  <rect width="680" height="290" fill="#ffffff"/>
+  <text x="340" y="28" font-size="20" text-anchor="middle" fill="#1f4e79" font-weight="bold">Petició i resposta HTTP</text>
+
+  <rect x="20" y="50" width="150" height="200" rx="8" fill="#dbe8f5" stroke="#1f4e79"/>
+  <text x="95" y="150" font-size="16" text-anchor="middle" fill="#1f4e79" font-weight="bold">Navegador</text>
+  <text x="95" y="170" font-size="12" text-anchor="middle" fill="#1f4e79">(o curl)</text>
+
+  <rect x="510" y="50" width="150" height="200" rx="8" fill="#dff1e6" stroke="#2e8b57"/>
+  <text x="585" y="140" font-size="16" text-anchor="middle" fill="#2e8b57" font-weight="bold">Servidor web</text>
+  <text x="585" y="160" font-size="12" text-anchor="middle" fill="#2e8b57">Apache / Nginx</text>
+  <text x="585" y="176" font-size="12" text-anchor="middle" fill="#2e8b57">port 80 / 443</text>
+
+  <!-- Petició -->
+  <line x1="170" y1="90" x2="506" y2="90" stroke="#5a6270" stroke-width="2" marker-end="url(#fh)"/>
+  <rect x="200" y="100" width="280" height="50" rx="4" fill="#1e252e"/>
+  <text x="212" y="120" font-size="13" fill="#7fd1ff" font-family="Courier New, monospace">GET /index.html HTTP/1.1</text>
+  <text x="212" y="140" font-size="13" fill="#e6e6e6" font-family="Courier New, monospace">Host: www.example.com</text>
+
+  <!-- Resposta -->
+  <line x1="510" y1="185" x2="174" y2="185" stroke="#5a6270" stroke-width="2" marker-end="url(#fh)"/>
+  <rect x="200" y="195" width="280" height="50" rx="4" fill="#1e252e"/>
+  <text x="212" y="215" font-size="13" fill="#b5e08c" font-family="Courier New, monospace">HTTP/1.1 200 OK</text>
+  <text x="212" y="235" font-size="13" fill="#e6e6e6" font-family="Courier New, monospace">Content-Type: text/html</text>
+
+  <text x="340" y="278" font-size="13" text-anchor="middle" fill="#5a6270">El client sempre pregunta primer; el servidor respon amb un codi d'estat i el contingut.</text>
+</svg>

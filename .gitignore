@@ -1,0 +1,14 @@
+# Web generada per Jekyll (es torna a crear amb jekyll build)
+_site/
+
+# Fitxers temporals de Jekyll i Sass
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+
+# Gems instal·lades dins del projecte (si es fa bundle config set path vendor)
+vendor/
+.bundle/
+
+# macOS
+.DS_Store

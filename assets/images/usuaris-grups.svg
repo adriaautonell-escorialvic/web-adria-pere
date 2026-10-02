@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 280" width="640" height="280" font-family="Arial, Helvetica, sans-serif">
+  <!-- Esquema: usuaris i grups (un usuari pot estar a diversos grups) -->
+  <rect width="640" height="280" fill="#ffffff"/>
+  <text x="320" y="30" font-size="20" text-anchor="middle" fill="#1f4e79" font-weight="bold">Usuaris i grups</text>
+
+  <!-- Usuaris -->
+  <g font-size="15" text-anchor="middle">
+    <rect x="40" y="60" width="150" height="40" rx="20" fill="#dbe8f5" stroke="#1f4e79"/>
+    <text x="115" y="85" fill="#1f4e79">anna</text>
+    <rect x="40" y="120" width="150" height="40" rx="20" fill="#dbe8f5" stroke="#1f4e79"/>
+    <text x="115" y="145" fill="#1f4e79">marc</text>
+    <rect x="40" y="180" width="150" height="40" rx="20" fill="#dbe8f5" stroke="#1f4e79"/>
+    <text x="115" y="205" fill="#1f4e79">laia</text>
+  </g>
+
+  <!-- Grups -->
+  <g font-size="15" text-anchor="middle">
+    <rect x="430" y="60" width="170" height="50" rx="6" fill="#dff1e6" stroke="#2e8b57"/>
+    <text x="515" y="90" fill="#2e8b57" font-weight="bold">sistemes</text>
+    <rect x="430" y="130" width="170" height="50" rx="6" fill="#dff1e6" stroke="#2e8b57"/>
+    <text x="515" y="160" fill="#2e8b57" font-weight="bold">sudo</text>
+    <rect x="430" y="200" width="170" height="50" rx="6" fill="#dff1e6" stroke="#2e8b57"/>
+    <text x="515" y="230" fill="#2e8b57" font-weight="bold">web</text>
+  </g>
+
+  <!-- Relacions -->
+  <g stroke="#5a6270" stroke-width="2" fill="none">
+    <line x1="190" y1="80" x2="430" y2="85"/>
+    <line x1="190" y1="80" x2="430" y2="155"/>
+    <line x1="190" y1="140" x2="430" y2="85"/>
+    <line x1="190" y1="200" x2="430" y2="225"/>
+  </g>
+
+  <text x="320" y="268" font-size="13" text-anchor="middle" fill="#5a6270">Un usuari té un grup principal i pot pertànyer a més grups secundaris</text>
+</svg>

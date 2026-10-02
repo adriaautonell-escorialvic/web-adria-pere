@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 300" width="680" height="300" font-family="Arial, Helvetica, sans-serif">
+  <!-- Autenticació SSH amb claus: la pública al servidor, la privada al client -->
+  <defs>
+    <marker id="f" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5a6270"/>
+    </marker>
+  </defs>
+  <rect width="680" height="300" fill="#ffffff"/>
+  <text x="340" y="28" font-size="20" text-anchor="middle" fill="#1f4e79" font-weight="bold">Connexió SSH amb claus</text>
+
+  <!-- Client -->
+  <rect x="30" y="60" width="240" height="170" rx="8" fill="#dbe8f5" stroke="#1f4e79"/>
+  <text x="150" y="86" font-size="16" text-anchor="middle" fill="#1f4e79" font-weight="bold">Client (el nostre PC)</text>
+  <text x="50" y="118" font-size="13" fill="#333" font-family="Courier New, monospace">~/.ssh/id_ed25519</text>
+  <text x="50" y="136" font-size="12" fill="#b3314f">clau PRIVADA (no es comparteix)</text>
+  <text x="50" y="168" font-size="13" fill="#333" font-family="Courier New, monospace">~/.ssh/id_ed25519.pub</text>
+  <text x="50" y="186" font-size="12" fill="#2e8b57">clau pública (es copia al servidor)</text>
+
+  <!-- Servidor -->
+  <rect x="410" y="60" width="240" height="170" rx="8" fill="#dff1e6" stroke="#2e8b57"/>
+  <text x="530" y="86" font-size="16" text-anchor="middle" fill="#2e8b57" font-weight="bold">Servidor (sshd)</text>
+  <text x="425" y="118" font-size="13" fill="#333" font-family="Courier New, monospace">~/.ssh/authorized_keys</text>
+  <text x="425" y="136" font-size="12" fill="#333">llista de claus públiques</text>
+  <text x="425" y="168" font-size="13" fill="#333">Port 22/TCP</text>
+
+  <!-- Fletxes -->
+  <g stroke="#5a6270" stroke-width="2">
+    <line x1="270" y1="120" x2="406" y2="120" marker-end="url(#f)"/>
+    <line x1="406" y1="175" x2="274" y2="175" marker-end="url(#f)"/>
+    <line x1="270" y1="205" x2="406" y2="205" marker-end="url(#f)"/>
+  </g>
+  <g font-size="12" fill="#333" text-anchor="middle">
+    <text x="340" y="113">1. vull entrar com a "admin"</text>
+    <text x="340" y="168">2. repte xifrat</text>
+    <text x="340" y="198">3. resposta signada</text>
+  </g>
+
+  <text x="340" y="265" font-size="14" text-anchor="middle" fill="#1f4e79">Si la signatura quadra amb la clau pública → accés sense contrasenya</text>
+  <text x="340" y="285" font-size="12" text-anchor="middle" fill="#5a6270">(tot el trànsit viatja xifrat)</text>
+</svg>

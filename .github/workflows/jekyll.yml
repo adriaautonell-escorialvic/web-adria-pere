@@ -1,0 +1,61 @@
+# Workflow que genera la web amb Jekyll i la publica a GitHub Pages.
+# Basat en el workflow d'exemple que proposa GitHub per a Jekyll.
+
+name: Desplegar Jekyll a GitHub Pages
+
+on:
+  # S'executa cada vegada que es fa push a la branca main
+  push:
+    branches: ["main"]
+  # Permet executar-lo a mà des de la pestanya Actions
+  workflow_dispatch:
+
+# Permisos que necessita el workflow per publicar a Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Només un desplegament alhora
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  # 1a feina: generar la web
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descarregar el codi del repositori
+        uses: actions/checkout@v4
+
+      - name: Instal·lar Ruby i les gems del Gemfile
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true   # fa "bundle install" i guarda les gems en caché
+
+      - name: Configurar GitHub Pages
+        id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Generar la web amb Jekyll
+        # El base_path és "/nom-del-repositori", així els enllaços funcionen
+        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        env:
+          JEKYLL_ENV: production
+
+      - name: Pujar la carpeta _site com a artefacte
+        uses: actions/upload-pages-artifact@v3
+
+  # 2a feina: publicar l'artefacte a GitHub Pages
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publicar a GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

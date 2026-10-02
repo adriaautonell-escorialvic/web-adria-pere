@@ -1,0 +1,277 @@
+/* ==========================================================
+   CSS propi de NetCore Systems
+   Es carrega DESPRÉS del CSS de minima (veure _includes/head.html),
+   per això aquestes regles tenen prioritat sobre les del tema.
+   ========================================================== */
+
+/* --- Colors que fem servir a tota la web --- */
+:root {
+  --nc-blau: #1f4e79;
+  --nc-blau-clar: #e8f0f8;
+  --nc-verd: #2e8b57;
+  --nc-gris: #5a6270;
+  --nc-vora: #d6dce4;
+}
+
+body {
+  font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #222;
+  background: #fafbfc;
+}
+
+/* Fem la web una mica més ampla que la de minima (per al menú lateral) */
+.wrapper {
+  max-width: 1040px;
+}
+
+a { color: var(--nc-blau); }
+a:hover { color: var(--nc-verd); }
+
+h1, h2, h3 { color: var(--nc-blau); }
+h2 {
+  border-bottom: 2px solid var(--nc-vora);
+  padding-bottom: 4px;
+  margin-top: 32px;
+}
+
+/* ---------- Capçalera ---------- */
+.nc-header {
+  background: var(--nc-blau);
+  border-top: none;
+  border-bottom: 4px solid var(--nc-verd);
+  min-height: auto;
+}
+
+.nc-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.nc-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+.nc-brand:hover { color: #fff; text-decoration: none; }
+
+.nc-nav a {
+  color: #fff;
+  margin-left: 16px;
+  padding: 4px 2px;
+}
+.nc-nav a:hover,
+.nc-nav a.actiu {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 2px solid #fff;
+}
+
+/* El botó del menú només es veu al mòbil */
+.nc-menu-toggle,
+.nc-menu-button { display: none; }
+
+/* ---------- Pàgina d'inici ---------- */
+.nc-hero {
+  background: var(--nc-blau-clar);
+  border-left: 6px solid var(--nc-blau);
+  padding: 20px 24px;
+  margin-bottom: 24px;
+  border-radius: 4px;
+}
+.nc-hero h1 { margin-top: 0; }
+
+/* Targetes de les seccions */
+.nc-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin: 20px 0;
+}
+.nc-card {
+  background: #fff;
+  border: 1px solid var(--nc-vora);
+  border-top: 4px solid var(--nc-verd);
+  border-radius: 4px;
+  padding: 16px;
+}
+.nc-card h3 { margin-top: 0; }
+.nc-card p { color: var(--nc-gris); margin-bottom: 8px; }
+
+/* ---------- Pàgines de documentació (layout doc) ---------- */
+.nc-doc {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.nc-sidebar {
+  flex: 0 0 200px;
+  background: #fff;
+  border: 1px solid var(--nc-vora);
+  border-radius: 4px;
+  padding: 12px 16px;
+  position: sticky;
+  top: 16px;
+}
+.nc-sidebar-title {
+  font-weight: bold;
+  color: var(--nc-blau);
+  margin-bottom: 8px;
+}
+.nc-sidebar ul { list-style: none; margin: 0; }
+.nc-sidebar li { margin-bottom: 6px; }
+.nc-sidebar a.actiu { font-weight: bold; color: var(--nc-verd); }
+
+.nc-doc-content {
+  flex: 1;
+  min-width: 0; /* perquè els blocs de codi llargs no trenquin el flex */
+}
+
+.nc-breadcrumb {
+  font-size: 0.9rem;
+  color: var(--nc-gris);
+  margin-bottom: 4px;
+}
+
+.nc-meta {
+  color: var(--nc-gris);
+  font-style: italic;
+}
+
+/* ---------- Taules ---------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+}
+table th {
+  background: var(--nc-blau);
+  color: #fff;
+}
+table th, table td {
+  border: 1px solid var(--nc-vora);
+  padding: 6px 10px;
+}
+table tr:nth-child(even) td { background: #f4f6f9; }
+
+/* ---------- Blocs de codi ---------- */
+/* Fons clar amb una vora blava a l'esquerra, perquè es distingeixin del text */
+.highlighter-rouge .highlight,
+pre.highlight,
+pre.highlight code {
+  background: #f1f4f8;
+}
+pre.highlight {
+  border: 1px solid var(--nc-vora);
+  border-left: 4px solid var(--nc-blau);
+  border-radius: 4px;
+  padding: 12px 14px;
+  overflow-x: auto;
+}
+pre.highlight code {
+  color: #1e252e;
+}
+
+/* Codi dins de text */
+p code, li code, td code {
+  background: var(--nc-blau-clar);
+  border: none;
+  padding: 1px 4px;
+  color: #b3314f;
+}
+
+/* ---------- Avisos (component propi) ----------
+   Ús en Markdown:  > **Compte:** text...
+                    {: .avis }                                  */
+blockquote.avis,
+blockquote.consell {
+  font-style: normal;
+  font-size: 1rem;
+  letter-spacing: 0;
+  color: #222;
+  border-radius: 4px;
+  padding: 10px 14px;
+}
+blockquote.avis {
+  background: #fff4e5;
+  border-left: 5px solid #e69500;
+}
+blockquote.consell {
+  background: #eaf6ee;
+  border-left: 5px solid var(--nc-verd);
+}
+
+/* ---------- Imatges i figures ---------- */
+.post-content img,
+.nc-doc-content img,
+.page-content img {
+  display: block;
+  margin: 16px auto;
+  max-width: 100%;
+  background: #fff;
+  border: 1px solid var(--nc-vora);
+  border-radius: 4px;
+}
+
+/* ---------- Llista d'articles del blog ---------- */
+.nc-posts { list-style: none; margin-left: 0; }
+.nc-posts li {
+  background: #fff;
+  border: 1px solid var(--nc-vora);
+  border-radius: 4px;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+}
+.nc-posts .nc-meta { font-size: 0.9rem; margin-bottom: 4px; }
+.nc-posts h3 { margin: 0 0 6px; }
+
+/* ---------- Peu de pàgina ---------- */
+.nc-footer {
+  background: #eef1f5;
+  border-top: 1px solid var(--nc-vora);
+  color: var(--nc-gris);
+  font-size: 0.9rem;
+  padding: 20px 0;
+}
+
+/* ==========================================================
+   Responsive: pantalles petites (mòbil)
+   ========================================================== */
+@media (max-width: 700px) {
+  .nc-menu-button {
+    display: block;
+    color: #fff;
+    font-size: 1.6rem;
+    cursor: pointer;
+    margin: 0;
+  }
+
+  /* El menú queda amagat fins que es prem el botó */
+  .nc-nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    margin-top: 8px;
+  }
+  .nc-menu-toggle:checked ~ .nc-nav { display: flex; }
+  .nc-nav a {
+    margin: 0;
+    padding: 8px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  /* El menú lateral passa a sobre del contingut */
+  .nc-doc { flex-direction: column; gap: 16px; }
+  .nc-sidebar { position: static; width: 100%; box-sizing: border-box; flex: none; }
+  .nc-doc-content { width: 100%; }
+
+  /* Les taules amples es poden desplaçar de costat en lloc de fer la pàgina més ampla */
+  table { display: block; overflow-x: auto; }
+}

@@ -1,0 +1,15 @@
+<!--
+  Llista les pàgines que tenen la mateixa "section" que la pàgina actual.
+  Així el menú lateral de cada secció es fa sol i no s'ha d'escriure a mà.
+-->
+{%- assign pagines_seccio = site.pages | where: "section", page.section | sort: "order" -%}
+<aside class="nc-sidebar">
+  <p class="nc-sidebar-title">{{ page.section | capitalize }}</p>
+  <ul>
+    {%- for p in pagines_seccio -%}
+      <li>
+        <a href="{{ p.url | relative_url }}" {% if p.url == page.url %}class="actiu"{% endif %}>{{ p.title }}</a>
+      </li>
+    {%- endfor -%}
+  </ul>
+</aside>

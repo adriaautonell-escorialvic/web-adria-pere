@@ -1,0 +1,13 @@
+<!-- Sobreescriu el head.html del tema minima per afegir el favicon i el nostre CSS -->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {%- seo -%}
+  <link rel="icon" type="image/svg+xml" href="{{ '/assets/images/favicon.svg' | relative_url }}">
+  <!-- CSS del tema minima -->
+  <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
+  <!-- CSS propi (va després perquè pugui sobreescriure el del tema) -->
+  <link rel="stylesheet" href="{{ '/assets/css/netcore.css' | relative_url }}">
+  {%- feed_meta -%}
+</head>

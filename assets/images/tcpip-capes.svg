@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 320" width="640" height="320" font-family="Arial, Helvetica, sans-serif">
+  <!-- Model TCP/IP de 4 capes amb exemples de protocols -->
+  <rect width="640" height="320" fill="#ffffff"/>
+  <text x="320" y="30" font-size="20" text-anchor="middle" fill="#1f4e79" font-weight="bold">Model TCP/IP</text>
+
+  <g font-size="16">
+    <rect x="60" y="50" width="220" height="56" fill="#1f4e79"/>
+    <text x="170" y="84" fill="#fff" text-anchor="middle" font-weight="bold">4. Aplicació</text>
+    <rect x="280" y="50" width="300" height="56" fill="#dbe8f5" stroke="#1f4e79"/>
+    <text x="296" y="84" fill="#1f4e79">HTTP, HTTPS, DNS, SSH, FTP</text>
+
+    <rect x="60" y="116" width="220" height="56" fill="#2e6fa8"/>
+    <text x="170" y="150" fill="#fff" text-anchor="middle" font-weight="bold">3. Transport</text>
+    <rect x="280" y="116" width="300" height="56" fill="#dbe8f5" stroke="#2e6fa8"/>
+    <text x="296" y="150" fill="#1f4e79">TCP, UDP (ports)</text>
+
+    <rect x="60" y="182" width="220" height="56" fill="#2e8b57"/>
+    <text x="170" y="216" fill="#fff" text-anchor="middle" font-weight="bold">2. Internet</text>
+    <rect x="280" y="182" width="300" height="56" fill="#dff1e6" stroke="#2e8b57"/>
+    <text x="296" y="216" fill="#2e8b57">IP, ICMP (adreces IP)</text>
+
+    <rect x="60" y="248" width="220" height="56" fill="#5a6270"/>
+    <text x="170" y="282" fill="#fff" text-anchor="middle" font-weight="bold">1. Accés a la xarxa</text>
+    <rect x="280" y="248" width="300" height="56" fill="#eeeeee" stroke="#5a6270"/>
+    <text x="296" y="282" fill="#333">Ethernet, Wi-Fi (adreces MAC)</text>
+  </g>
+</svg>
