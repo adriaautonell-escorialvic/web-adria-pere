@@ -195,4 +195,4 @@ Les carpetes que comencen per `_` són especials per a Jekyll i no es copien tal
 
 ## 10. URL de la web publicada
 
-https://adriaautonell-escorialvic.github.io
+https://adriaautonell-escorialvic.github.io/web-adria-pere/
